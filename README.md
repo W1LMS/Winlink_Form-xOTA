@@ -1,2 +1,2 @@
 # Winlink_Form-xOTA
-For Spoting and Hunting Parks, Summits, and more, OTA via Winlink
+For Off-Grid Spotting and Hunting Parks, Summits, and more, OTA via Winlink
