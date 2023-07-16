@@ -14,7 +14,7 @@
 			/* Hides the other divs/pages until selected from the navbar */
 			#sya, #vsp, #vsa {display: none;}
 			
-			/* Selection between Spotting and Viewing Spots */
+			/* Seletion between Spotting and Viewing Spots */
 			.primaryNav {background-color: #293241; text-align: center;}
 			.primaryNav ul {display: inline-block; list-style-type: none; margin: 0 auto; overflow: hidden; padding: 0;}
 			.primaryNav ul li {float: left; font-size: 1.5em; margin: 0;}
@@ -36,21 +36,24 @@
 			.activation input[type=text], .activation input.text {clear: both; font-size: 1.75em; width: 100%;}
 
 			/* Elements for both POTAGW and APSPOT on the View Spots pages */
-			.hunting fieldset {overflow: hidden;}
+			.hunting fieldset {clear: both; overflow: hidden;}
 			.hunting legend, .optionalFilters {font-size: 1.5em; font-weight: bold;}
-			.hunting p {margin-bottom: 0;}
 			.huntingOpts {clear: none; float: left;}
 			.hunting label {clear: none; display: block; float: left; font-size: 1em; font-weight: bold; padding: 0 0 0 8px;}
 			.hunting input[type=text], .hunting input.text {clear: both; font-size: 1.75em; margin: 0 110px; text-align: center;}
 			input[type=radio], .hunting input.radio {clear: none; float: left; margin: 3px 0 0 15px;}
 			input[type=submit], .hunting input.submit {clear: both; font-size: 1.75em; width: 100%;}
-			.optionalFilters {text-align: center;}
+			.optionalFilters {text-align: center; margin-bottom: 0;}
 			.filters {margin: 0 auto; text-align: left; padding: 0;}
 
 			/* Shared elements on both Spot Yourself and View Spots pages */
+			.required-field::after {content: "*"; color: red;}
 			.examples {font-size: 0.9em; font-style: italic;}
 			.version {text-align: right; font-size: 0.75em;}
 			.author {text-align: center;}
+			.w3c {width: 50%; float: left;}
+			.version-revision {margin-left: 50%;}
+			.footer {clear: both;}
 		</style>
 		<script type="text/javascript">
 			function show(shown, hidden) {document.getElementById(shown).style.display='block'; document.getElementById(hidden).style.display='none'; return false;}
@@ -82,40 +85,46 @@
 				</ul>
 			</div>
 			
-			<!-- Winlink Form - NOTE: The 'required' attribute of the input field is HTML5, not XHTML 1.0 Transitional so YMMV -->
+			<!-- Winlink Form  -->
 			<div class="activation">
-				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
+				<form id="RMS_Express_form_syp" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 					<p>
 						<input type="hidden" name="To" value="potagw@outlook.com" />
 						<input type="hidden" name="cmd" value="SPOT" />
 					</p>
 					<p>
-						<label>Activator:</label>
-						<input type="text" name="Alpha" value="{Callsign}" required />
+						<label class="required-field">Activator:</label>
+						<input type="text" name="Alpha" value="{Callsign}" />
 					</p>
 					<p>
-						<label>POTA Park ID:</label> <span class="examples">[e.g. K-0001]</span>
-						<input type="text" name="Bravo" required />
+						<label class="required-field">POTA Park ID:</label> <span class="examples">[e.g. K-0001]</span>
+						<input type="text" name="Bravo" />
 					</p>
 					<p>
-						<label>Frequency (kHz):</label> <span class="examples">[e.g. 14310, 7144, etc.]</span>
-						<input type="text" name="Charlie" required />
+						<label class="required-field">Frequency (kHz):</label> <span class="examples">[e.g. 14310, 7144, etc.]</span>
+						<input type="text" name="Charlie" />
 					</p>
 					<p>
-						<label>Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT4, FT8, PSK31, RTTY, SSB, etc.]</span>
-						<input type="text" name="Delta" required />
+						<label class="required-field">Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT4, FT8, PSK31, RTTY, SSB, etc.]</span>
+						<input type="text" name="Delta" />
 					</p>
 					<p>
 						<label>Comment:</label> <span class="examples">[e.g. 2fer + K-0002 and 3 activtors]</span>
 						<input type="text" name="Echo" /> 
 					</p>
 					<p>
-						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
+						<input type="submit" name="Submit" value="Submit" />
 					</p>
 				</form>
 			</div>
-			<div>
-				<p class="version">ver. 2.0.1<br />rev. 7/15/2023</p>
+			<div class="w3c">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAADAFBMVEUAAQEHCAkKCwsNDxASFBUTFhgXGh0cHBwaHiEcICMjIyMgJSkjKS0oKCgmLDApLzQqMTUtNDkzMzM7Ozs2PkQ4QUc7REtLS0xBS1JPT1BGUFhKVV1UVVVbW1tEXW9MWGBQXGVZXmJVYmtZZnBbaXJlZWVsbGxgbnhjcn12d3p7e3sAWpwIX58fW4cJYJ8NYqERZaIVaKQaa6YebagybZkhb6klcqopdawxea85dKE1fLA4frJnd4JpeYVtfol5fYE8gbNEhrZHiLdKirlVkb1alL9rg5dxgo5zhZF4ipZ6jZp9kJ12kaddlsBjmsJpnsRtocZ1pcl8qsyDg4OJjpaXl5eYmJiAk6GFmaeGmqiQl6CLoK+NorGZoaqRp7aUqrqjpaarq620tLS/v7+Crs6GsM+FsNCJs9Gbs8OQt9SVutWYvNebvtiiusulvtCfwdqnwNKjw9upwtSqxtmtyd2wyt2yzeC20OPCwsLMzMzU1NTY2NjA1ufG2ujN3+zT4+7d6fLn5+fs7Ozi7PPp8fbu9Pjz8/Py9/r1+Pv+/v7MzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3irofAAAAi3RSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AhcMV7wAAAAFiS0dE/6UH8sUAAAAJcEhZcwAAAEgAAABIAEbJaz4AAAPsSURBVEjHrZaLVxtVEIfvYlpAY2xpIGBSbRX7cKJJThQQRC2NtVIIBmmR1m76ICd7KsvJ4z5EoK3lletf7czdbLJJrJz09Jezs7PJud/Ozp2ZDdt563r0D4nt6NN1wJVSQgmhpJHynf/Qw7XLfYAVJ67yceiJtwY25OZi9T8h9wmmNBiYMIlofqSi6KXk5jbiDcBcOHZdiaJdrxRdJZwiL9qkIrftupQV25bCdt4o4tssLm0rLObZNaHCzB1mpGGH4fcyyizhsnAPuJot4OryVJkgR8lklpTT+vjXKzv6SQPB+Nij7M57VlH64N834iy+YbuMDWwj3eIui/SAX0IGiXswR+AqeFrVOoardkd2EYwL3BBjVyWCx+bnzzJXiGt0C5edt769dCZMEfeC9TQ8R5uGQ7TLkDs82ILMiX7E3r9+ITTwygPzOLNqBDZylUKwQlw0PjQwGbHwFhHVAy7AJtoZqKLNwEutp8iduIBZ+Oxz7YGLLETpxFTwejgQcbTILDdiUsF7wHswi6sBMK/7MI3ppmsdop8axx5YhK1ilC0RWIlIIOJRHp9UEUrF0OLioiAwQKsqUpiFLYC01qtQ0Icp2MetGwy29CRi3HfO1ChidQ7BfsSjFGbYkq5J0TaCvwAie+AcPnoOZkBhPvZ0HpIrR7oRC3ae62CLuE695lS4chwuVM2pKcEdl8CuI4VD4urhV2bvm+Aq5BqpLIfCAUWdywDMNvS9Npg2z3S1d3iDSJg2bzez13/fNKvKAx9CWkH+JDm9BT/S9X4auP6zA4w8HoQp1TE+fPiNJtfvvDnMg9Q3wKsMrVcgH+w8KVsAQldeO9taXB9cAviygdUAcGSuOUx1gp0wY+teCpzzzIp3oPncs26uD34OcJNaEH7QTXD2lecdH1NVSGdyzAdfYt+Ns40AV8xCqtzFbQ2hLPxhWrCsny2bVCw89chXnlJV4KpPPbBQw2e5zT7pev7kppQLHvajjumWhwPTgi/QKxxV01BtXPybuNZf3ub5YFVj50SFfdDmrni8wk1zSt662AGWM2T3vtb6JANJoNbbGUwk3mV3dSdYqtCwcNiHwQxDW8mlrnnc2DQnnGn6xUomkz9BZzcxOPLYrwpuwFc/FnLMcn5iPwdzvNDmlvsb9DSDUCEZYUo+sCw2VAlWhVhucft+g9TvrK8vbcgHvyHHub243VW/yz6333eefG1LNPULclOl/l+mUp0ClqvJVEnx/l+m/DQwL5U4jaf+/wk19ynICvo0o3gn+MmpenyfdJfM2v221u6R8b5p2e+v++BYIhabmJhoHYlY99loDI/xWFNR3xkPWE+J2IgB/wsqW0UODQNcGAAAAABJRU5ErkJggg==" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
+			</div>
+			<div class="version-revision">
+				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+			</div>
+			<div class="footer">
 				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh for APSPOT.radio.</p>
 			</div>
 		</div>
@@ -135,40 +144,46 @@
 				</ul>
 			</div>
 			
-			<!-- Winlink Form - NOTE: the 'required' attribute of the input field is HTML5, not XHTML 1.0 Transitional so YMMV -->
+			<!-- Winlink Form -->
 			<div class="activation">
-				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
+				<form id="RMS_Express_form_sya" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 					<p>
 						<input type="hidden" name="To" value="apspot@apspot.radio" />
 						<input type="hidden" name="cmd" value="!" />
 					</p>
 					<p>
-						<label>Activity:</label> <span class="examples">[e.g. POTA SiOTA, SOTA, or WWFF]</span>
-						<input type="text" name="Alpha" required />
+						<label class="required-field">Activity:</label> <span class="examples">[e.g. POTA SiOTA, SOTA, or WWFF]</span>
+						<input type="text" name="Alpha" />
 					</p>
 					<p>
-						<label>Park Ref. ID:</label> <span class="examples">[e.g. K-0001 for POTA, WWFF-1929 for WWFF, etc.]</span>
-						<input type="text" name="Bravo" required />
+						<label class="required-field">Park Ref. ID:</label> <span class="examples">[e.g. K-0001 for POTA, WWFF-1929 for WWFF, etc.]</span>
+						<input type="text" name="Bravo" />
 					</p>
 					<p>
-						<label>Frequency (MHz):</label> <span class="examples">[e.g. 14.310, 7.144, etc.]</span>
-						<input type="text" name="Charlie" required />
+						<label class="required-field">Frequency (MHz):</label> <span class="examples">[e.g. 14.310, 7.144, etc.]</span>
+						<input type="text" name="Charlie" />
 					</p>
 					<p>
-						<label>Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT8, PSK, RTTY, SSB, etc.]</span>
-						<input type="text" name="Delta" required />
+						<label class="required-field">Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT8, PSK, RTTY, SSB, etc.]</span>
+						<input type="text" name="Delta" />
 					</p>
 					<p>
 						<label>Comment:</label> <span class="examples">[e.g. CQ CQ]</span>
 						<input type="text" name="Echo" /> 
 					</p>
 					<p>
-						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
+						<input type="submit" name="Submit" value="Submit" />
 					</p>
 				</form>
 			</div>
-			<div>
-				<p class="version">ver. 2.0.1<br />rev. 7/15/2023</p>
+			<div class="w3c">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAADAFBMVEUAAQEHCAkKCwsNDxASFBUTFhgXGh0cHBwaHiEcICMjIyMgJSkjKS0oKCgmLDApLzQqMTUtNDkzMzM7Ozs2PkQ4QUc7REtLS0xBS1JPT1BGUFhKVV1UVVVbW1tEXW9MWGBQXGVZXmJVYmtZZnBbaXJlZWVsbGxgbnhjcn12d3p7e3sAWpwIX58fW4cJYJ8NYqERZaIVaKQaa6YebagybZkhb6klcqopdawxea85dKE1fLA4frJnd4JpeYVtfol5fYE8gbNEhrZHiLdKirlVkb1alL9rg5dxgo5zhZF4ipZ6jZp9kJ12kaddlsBjmsJpnsRtocZ1pcl8qsyDg4OJjpaXl5eYmJiAk6GFmaeGmqiQl6CLoK+NorGZoaqRp7aUqrqjpaarq620tLS/v7+Crs6GsM+FsNCJs9Gbs8OQt9SVutWYvNebvtiiusulvtCfwdqnwNKjw9upwtSqxtmtyd2wyt2yzeC20OPCwsLMzMzU1NTY2NjA1ufG2ujN3+zT4+7d6fLn5+fs7Ozi7PPp8fbu9Pjz8/Py9/r1+Pv+/v7MzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3irofAAAAi3RSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AhcMV7wAAAAFiS0dE/6UH8sUAAAAJcEhZcwAAAEgAAABIAEbJaz4AAAPsSURBVEjHrZaLVxtVEIfvYlpAY2xpIGBSbRX7cKJJThQQRC2NtVIIBmmR1m76ICd7KsvJ4z5EoK3lletf7czdbLJJrJz09Jezs7PJud/Ozp2ZDdt563r0D4nt6NN1wJVSQgmhpJHynf/Qw7XLfYAVJ67yceiJtwY25OZi9T8h9wmmNBiYMIlofqSi6KXk5jbiDcBcOHZdiaJdrxRdJZwiL9qkIrftupQV25bCdt4o4tssLm0rLObZNaHCzB1mpGGH4fcyyizhsnAPuJot4OryVJkgR8lklpTT+vjXKzv6SQPB+Nij7M57VlH64N834iy+YbuMDWwj3eIui/SAX0IGiXswR+AqeFrVOoardkd2EYwL3BBjVyWCx+bnzzJXiGt0C5edt769dCZMEfeC9TQ8R5uGQ7TLkDs82ILMiX7E3r9+ITTwygPzOLNqBDZylUKwQlw0PjQwGbHwFhHVAy7AJtoZqKLNwEutp8iduIBZ+Oxz7YGLLETpxFTwejgQcbTILDdiUsF7wHswi6sBMK/7MI3ppmsdop8axx5YhK1ilC0RWIlIIOJRHp9UEUrF0OLioiAwQKsqUpiFLYC01qtQ0Icp2MetGwy29CRi3HfO1ChidQ7BfsSjFGbYkq5J0TaCvwAie+AcPnoOZkBhPvZ0HpIrR7oRC3ae62CLuE695lS4chwuVM2pKcEdl8CuI4VD4urhV2bvm+Aq5BqpLIfCAUWdywDMNvS9Npg2z3S1d3iDSJg2bzez13/fNKvKAx9CWkH+JDm9BT/S9X4auP6zA4w8HoQp1TE+fPiNJtfvvDnMg9Q3wKsMrVcgH+w8KVsAQldeO9taXB9cAviygdUAcGSuOUx1gp0wY+teCpzzzIp3oPncs26uD34OcJNaEH7QTXD2lecdH1NVSGdyzAdfYt+Ns40AV8xCqtzFbQ2hLPxhWrCsny2bVCw89chXnlJV4KpPPbBQw2e5zT7pev7kppQLHvajjumWhwPTgi/QKxxV01BtXPybuNZf3ub5YFVj50SFfdDmrni8wk1zSt662AGWM2T3vtb6JANJoNbbGUwk3mV3dSdYqtCwcNiHwQxDW8mlrnnc2DQnnGn6xUomkz9BZzcxOPLYrwpuwFc/FnLMcn5iPwdzvNDmlvsb9DSDUCEZYUo+sCw2VAlWhVhucft+g9TvrK8vbcgHvyHHub243VW/yz6333eefG1LNPULclOl/l+mUp0ClqvJVEnx/l+m/DQwL5U4jaf+/wk19ynICvo0o3gn+MmpenyfdJfM2v221u6R8b5p2e+v++BYIhabmJhoHYlY99loDI/xWFNR3xkPWE+J2IgB/wsqW0UODQNcGAAAAABJRU5ErkJggg==" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
+			</div>
+			<div class="version-revision">
+				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+			</div>
+			<div class="footer">
 				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh for APSPOT.radio.</p>
 			</div>
 		</div>
@@ -191,7 +206,7 @@
 			<!-- Winlink Form -->
 			<div class="hunting">
 				<p></p>
-				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
+				<form id="RMS_Express_form_vsp" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 						<fieldset>
 							<legend>View POTA Activty:</legend>
 							<div class="huntingOpts">
@@ -209,14 +224,19 @@
 								<input type="hidden" name="Echo" value="" />
 							</div>
 						</fieldset>
-
 					<p>
-						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
+						<input type="submit" name="Submit" value="Submit" />
 					</p>
 				</form>
 			</div>
-			<div>
-				<p class="version">ver. 2.0.1<br />rev. 7/15/2023</p>
+			<div class="w3c">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAADAFBMVEUAAQEHCAkKCwsNDxASFBUTFhgXGh0cHBwaHiEcICMjIyMgJSkjKS0oKCgmLDApLzQqMTUtNDkzMzM7Ozs2PkQ4QUc7REtLS0xBS1JPT1BGUFhKVV1UVVVbW1tEXW9MWGBQXGVZXmJVYmtZZnBbaXJlZWVsbGxgbnhjcn12d3p7e3sAWpwIX58fW4cJYJ8NYqERZaIVaKQaa6YebagybZkhb6klcqopdawxea85dKE1fLA4frJnd4JpeYVtfol5fYE8gbNEhrZHiLdKirlVkb1alL9rg5dxgo5zhZF4ipZ6jZp9kJ12kaddlsBjmsJpnsRtocZ1pcl8qsyDg4OJjpaXl5eYmJiAk6GFmaeGmqiQl6CLoK+NorGZoaqRp7aUqrqjpaarq620tLS/v7+Crs6GsM+FsNCJs9Gbs8OQt9SVutWYvNebvtiiusulvtCfwdqnwNKjw9upwtSqxtmtyd2wyt2yzeC20OPCwsLMzMzU1NTY2NjA1ufG2ujN3+zT4+7d6fLn5+fs7Ozi7PPp8fbu9Pjz8/Py9/r1+Pv+/v7MzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3irofAAAAi3RSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AhcMV7wAAAAFiS0dE/6UH8sUAAAAJcEhZcwAAAEgAAABIAEbJaz4AAAPsSURBVEjHrZaLVxtVEIfvYlpAY2xpIGBSbRX7cKJJThQQRC2NtVIIBmmR1m76ICd7KsvJ4z5EoK3lletf7czdbLJJrJz09Jezs7PJud/Ozp2ZDdt563r0D4nt6NN1wJVSQgmhpJHynf/Qw7XLfYAVJ67yceiJtwY25OZi9T8h9wmmNBiYMIlofqSi6KXk5jbiDcBcOHZdiaJdrxRdJZwiL9qkIrftupQV25bCdt4o4tssLm0rLObZNaHCzB1mpGGH4fcyyizhsnAPuJot4OryVJkgR8lklpTT+vjXKzv6SQPB+Nij7M57VlH64N834iy+YbuMDWwj3eIui/SAX0IGiXswR+AqeFrVOoardkd2EYwL3BBjVyWCx+bnzzJXiGt0C5edt769dCZMEfeC9TQ8R5uGQ7TLkDs82ILMiX7E3r9+ITTwygPzOLNqBDZylUKwQlw0PjQwGbHwFhHVAy7AJtoZqKLNwEutp8iduIBZ+Oxz7YGLLETpxFTwejgQcbTILDdiUsF7wHswi6sBMK/7MI3ppmsdop8axx5YhK1ilC0RWIlIIOJRHp9UEUrF0OLioiAwQKsqUpiFLYC01qtQ0Icp2MetGwy29CRi3HfO1ChidQ7BfsSjFGbYkq5J0TaCvwAie+AcPnoOZkBhPvZ0HpIrR7oRC3ae62CLuE695lS4chwuVM2pKcEdl8CuI4VD4urhV2bvm+Aq5BqpLIfCAUWdywDMNvS9Npg2z3S1d3iDSJg2bzez13/fNKvKAx9CWkH+JDm9BT/S9X4auP6zA4w8HoQp1TE+fPiNJtfvvDnMg9Q3wKsMrVcgH+w8KVsAQldeO9taXB9cAviygdUAcGSuOUx1gp0wY+teCpzzzIp3oPncs26uD34OcJNaEH7QTXD2lecdH1NVSGdyzAdfYt+Ns40AV8xCqtzFbQ2hLPxhWrCsny2bVCw89chXnlJV4KpPPbBQw2e5zT7pev7kppQLHvajjumWhwPTgi/QKxxV01BtXPybuNZf3ub5YFVj50SFfdDmrni8wk1zSt662AGWM2T3vtb6JANJoNbbGUwk3mV3dSdYqtCwcNiHwQxDW8mlrnnc2DQnnGn6xUomkz9BZzcxOPLYrwpuwFc/FnLMcn5iPwdzvNDmlvsb9DSDUCEZYUo+sCw2VAlWhVhucft+g9TvrK8vbcgHvyHHub243VW/yz6333eefG1LNPULclOl/l+mUp0ClqvJVEnx/l+m/DQwL5U4jaf+/wk19ynICvo0o3gn+MmpenyfdJfM2v221u6R8b5p2e+v++BYIhabmJhoHYlY99loDI/xWFNR3xkPWE+J2IgB/wsqW0UODQNcGAAAAABJRU5ErkJggg==" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
+			</div>
+			<div class="version-revision">
+				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+			</div>
+			<div class="footer">
 				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh for APSPOT.radio.</p>
 			</div>
 		</div>
@@ -239,7 +259,7 @@
 			<!-- Winlink Form -->
 			<div class="hunting">
 				<p></p>
-					<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
+					<form id="RMS_Express_form_vsa" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 							<input type="hidden" name="To" value="apspot@apspot.radio"/>
 							<fieldset>
 								<legend>View SPOT Activity:</legend>
@@ -287,12 +307,18 @@
 							<input type="hidden" name="Echo" value=""/>
 						<p class="filters"><sup>*</sup>POTA supports CW, DATA, FT8, SSB<br />SiOTA, SOTA, WWFF supports AM, CW, DATA, FM, PSK, RTTY, SSD.<br />https://apspot.radio/filtering-support-new-backend-big-things-coming/</p>
 						<p>
-							<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data"/>
+							<input type="submit" name="Submit" value="Submit" />
 						</p>
 					</form>
 			</div>
-			<div>
-				<p class="version">ver. 2.0.1<br />rev. 7/15/2023</p>
+			<div class="w3c">
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAADAFBMVEUAAQEHCAkKCwsNDxASFBUTFhgXGh0cHBwaHiEcICMjIyMgJSkjKS0oKCgmLDApLzQqMTUtNDkzMzM7Ozs2PkQ4QUc7REtLS0xBS1JPT1BGUFhKVV1UVVVbW1tEXW9MWGBQXGVZXmJVYmtZZnBbaXJlZWVsbGxgbnhjcn12d3p7e3sAWpwIX58fW4cJYJ8NYqERZaIVaKQaa6YebagybZkhb6klcqopdawxea85dKE1fLA4frJnd4JpeYVtfol5fYE8gbNEhrZHiLdKirlVkb1alL9rg5dxgo5zhZF4ipZ6jZp9kJ12kaddlsBjmsJpnsRtocZ1pcl8qsyDg4OJjpaXl5eYmJiAk6GFmaeGmqiQl6CLoK+NorGZoaqRp7aUqrqjpaarq620tLS/v7+Crs6GsM+FsNCJs9Gbs8OQt9SVutWYvNebvtiiusulvtCfwdqnwNKjw9upwtSqxtmtyd2wyt2yzeC20OPCwsLMzMzU1NTY2NjA1ufG2ujN3+zT4+7d6fLn5+fs7Ozi7PPp8fbu9Pjz8/Py9/r1+Pv+/v7MzMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3irofAAAAi3RSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AhcMV7wAAAAFiS0dE/6UH8sUAAAAJcEhZcwAAAEgAAABIAEbJaz4AAAPsSURBVEjHrZaLVxtVEIfvYlpAY2xpIGBSbRX7cKJJThQQRC2NtVIIBmmR1m76ICd7KsvJ4z5EoK3lletf7czdbLJJrJz09Jezs7PJud/Ozp2ZDdt563r0D4nt6NN1wJVSQgmhpJHynf/Qw7XLfYAVJ67yceiJtwY25OZi9T8h9wmmNBiYMIlofqSi6KXk5jbiDcBcOHZdiaJdrxRdJZwiL9qkIrftupQV25bCdt4o4tssLm0rLObZNaHCzB1mpGGH4fcyyizhsnAPuJot4OryVJkgR8lklpTT+vjXKzv6SQPB+Nij7M57VlH64N834iy+YbuMDWwj3eIui/SAX0IGiXswR+AqeFrVOoardkd2EYwL3BBjVyWCx+bnzzJXiGt0C5edt769dCZMEfeC9TQ8R5uGQ7TLkDs82ILMiX7E3r9+ITTwygPzOLNqBDZylUKwQlw0PjQwGbHwFhHVAy7AJtoZqKLNwEutp8iduIBZ+Oxz7YGLLETpxFTwejgQcbTILDdiUsF7wHswi6sBMK/7MI3ppmsdop8axx5YhK1ilC0RWIlIIOJRHp9UEUrF0OLioiAwQKsqUpiFLYC01qtQ0Icp2MetGwy29CRi3HfO1ChidQ7BfsSjFGbYkq5J0TaCvwAie+AcPnoOZkBhPvZ0HpIrR7oRC3ae62CLuE695lS4chwuVM2pKcEdl8CuI4VD4urhV2bvm+Aq5BqpLIfCAUWdywDMNvS9Npg2z3S1d3iDSJg2bzez13/fNKvKAx9CWkH+JDm9BT/S9X4auP6zA4w8HoQp1TE+fPiNJtfvvDnMg9Q3wKsMrVcgH+w8KVsAQldeO9taXB9cAviygdUAcGSuOUx1gp0wY+teCpzzzIp3oPncs26uD34OcJNaEH7QTXD2lecdH1NVSGdyzAdfYt+Ns40AV8xCqtzFbQ2hLPxhWrCsny2bVCw89chXnlJV4KpPPbBQw2e5zT7pev7kppQLHvajjumWhwPTgi/QKxxV01BtXPybuNZf3ub5YFVj50SFfdDmrni8wk1zSt662AGWM2T3vtb6JANJoNbbGUwk3mV3dSdYqtCwcNiHwQxDW8mlrnnc2DQnnGn6xUomkz9BZzcxOPLYrwpuwFc/FnLMcn5iPwdzvNDmlvsb9DSDUCEZYUo+sCw2VAlWhVhucft+g9TvrK8vbcgHvyHHub243VW/yz6333eefG1LNPULclOl/l+mUp0ClqvJVEnx/l+m/DQwL5U4jaf+/wk19ynICvo0o3gn+MmpenyfdJfM2v221u6R8b5p2e+v++BYIhabmJhoHYlY99loDI/xWFNR3xkPWE+J2IgB/wsqW0UODQNcGAAAAABJRU5ErkJggg==" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
+				<img src="data:image/gif;base64,R0lGODlhWAAfAPcAAAAAAAcICQsLCw8RExMUFRMWGBwcHBoeIRwgIyMjIyInKyQqLigoKCctMSguMysyNi41OjMzMzE4PTs7OzU9QjhARjxGTD9JUEtLTEFLUk9PUElUW1RVVVtbW0Rdb01YYVBcZVleYlVha1hlb1tpc2VlZWtrbGBveWJxfHt7ewBanAhfnx9bhwlgnw1ioRFlohVopBprph5tqDJtmSFvqSVyqil1rDF5rzl0oTV8sDh+smh4hG5/izyBs0SGtkeIt0qKuVWRvVqUv2uDl3CBjXSGknyPnXaRp3+ToF2WwGOawmmexG2hxnWlyXyqzIGDhYmOlpeXl5iYmIGUooaaqIidrJCXoI2isZmhqqOlpqurrbS0tL+/v4Kuzoawz4Ww0Imz0Zuywp+3yJC31JW61Zi815u+2KG6y6W+0J/B2qPD26nD1arG2qzI3LDL3rLN4LbQ48LCwszMzNTU1NjY2MDW58ba6M3f7NPj7t3p8ufn5+zs7OLs8+nx9u70+PPz8/L3+vX4+/7+/szMzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAIMALAAAAABYAB8AAAj+AOUIHEiwoMGDCBMqXMiQYJZBECHKEUSxosWLGDNm5POmo8ePIEOKHCmyCpQQESVqXMlSI0eSMGPKzHIy5aCJLXO2fCmzp8+OWGqmxKmzKEaeP5OSDIpyqNGnFpEqnfqRqU2iUI1KpUrVqlNBamQ0qQimBhiLflaskMGWbRCKf56YmLglEMWtXJV6jYgzjwoYFeuo0GFRjYrDiFU4oYgBAIAAdCLQuasUTt6qQvlWtKHiTsUXKvpUTKIiSB8+Zv4CEpQFAIMUEwgI2EP5Mte9Kik2UdGl4g0VairCUJGHYg3gFDVMsCuoRIqKeHtattw1c25BgnPcPfxWkB0VNij+glGhnSIBooH+QP9o5IMFEWHerCGSwcKIM2/cTNlQ4cOV2ycdpllFLoQmSGoqvECREyqM1QdodsCVwEo8ZfAYBAd88AYIADwgAQFU6AcAAhQgIAKALCB2nSBBINfib3AI8lsdgihxGBN+CBIIBhR2NAUABuD3hhhvEICAG2+0wcYbFhIpH1dVzJCYCjcVVpogLsjQRoN8JEhREMORt1oUPb4xAgAjgGQBAANYQEVHRFxIxJJU4TDlYVj1oYILb6igBCAr2JCaEBbZAVobgsRR5gcAnAASGzs44BgPPlIQAAAWTOWGD3dSiZUgOqjw2xuCcPpbcBYt4edOHRUBgAL+bbwBBxpv0PpGFQBc8MYZbsCxxgADKLVppysK4sVhLtg13mE5WtRnDax2JGkBH1AAwhsCWCtpEW9c4MAGFwCwwUht6EBGSJzeOWBFdxwGBEV+qdADRlvKQNtFf6gnCE9tnEDBART8twMFClSww5JTXLAABCQIGdJvLoDxUbpTfmWRDCqUsZkKZ5GRREWq/sDFvRWZwEVtIMFB3Ugqk0TxCl10RDFiHlyFkY18VLQbHjU22IcaoKkRSAd6lBzAHCjb5pGqUzbxw5QrDNHUuhW9cYNFddBAESDDrXBYeXIYwAEHCQBAZtJKJxlqp4itYIR1VV4USG8WLUYRHkvAAIO/EswJQgcHBkSghUV5pA3SsGyvAAZucWelleEhtXin4m8w/qnj0UL+kY2JrfAFUHBfjnmZmn/E9J6fgz51saOTXrpHTqiVuuo2t55TdJp7MTvtFtvu+uFIwhQrSW4EH5Llgmyh/PLMN+/8885rYcX0VkBBvRVSXG9FFNZTLwUU2VPf/fTfX8999kWYsPpNGHCAAQYaxA+//PFrML/97uMP//37v5/B+wC0QAAFCMD//c9/CMQAAQuYQADGLwI2CQgAOw==" alt="Valid CSS!" width="88" height="31" />
+			</div>
+			<div class="version-revision">
+				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+			</div>
+			<div class="footer">
 				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh for APSPOT.radio.</p>
 			</div>
 		</div>	
