@@ -72,45 +72,45 @@
 			<div class="primaryNav">
 				<ul>
 					<li><a class="active">Spot Yourself</a></li>
-					<li><a href="#" onclick="return show('vsp','syp')";>View Spots</a></li>
+					<li><a href="#" onclick="return show('vsp','syp')">View Spots</a></li>
 				</ul>
 			</div>
 			<div class="secondaryNav">
 				<ul>
 					<li><a class="active">POTAGW</a></li>
-					<li><a href="#" onclick="return show('sya','syp')";>APSPOT</a></li>
+					<li><a href="#" onclick="return show('sya','syp')">APSPOT</a></li>
 				</ul>
 			</div>
 			
 			<!-- Winlink Form - NOTE: The 'required' attribute of the input field is HTML5, not XHTML 1.0 Transitional so YMMV -->
 			<div class="activation">
-				<form id='RMS_Express_form' method='post' action='http://localhost:{FormPort}' enctype='multipart/form-data'>
+				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 					<p>
-						<input type='hidden' name='To' value="potagw@outlook.com" />
-						<input type='hidden' name='cmd' value="SPOT" />
+						<input type="hidden" name="To" value="potagw@outlook.com" />
+						<input type="hidden" name="cmd" value="SPOT" />
 					</p>
 					<p>
 						<label>Activator:</label>
-						<input type='text' name='Alpha' value='{Callsign}' required/>
+						<input type="text" name="Alpha" value="{Callsign}" required />
 					</p>
 					<p>
 						<label>POTA Park ID:</label> <span class="examples">[e.g. K-0001]</span>
-						<input type='text' name='Bravo'required/>
+						<input type="text" name="Bravo" required />
 					</p>
 					<p>
 						<label>Frequency (kHz):</label> <span class="examples">[e.g. 14310, 7144, etc.]</span>
-						<input type='text' name='Charlie'required/>
+						<input type="text" name="Charlie" required />
 					</p>
 					<p>
 						<label>Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT4, FT8, PSK31, RTTY, SSB, etc.]</span>
-						<input type='text' name='Delta'required/>
+						<input type="text" name="Delta" required />
 					</p>
 					<p>
 						<label>Comment:</label> <span class="examples">[e.g. 2fer + K-0002 and 3 activtors]</span>
-						<input type='text' name='Echo'/> 
+						<input type="text" name="Echo" /> 
 					</p>
 					<p>
-						<input type='submit' name='Submit' value='Submit' method='Post' enctype='multipart/form-data' />
+						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
 					</p>
 				</form>
 			</div>
@@ -125,45 +125,45 @@
 			<div class="primaryNav">
 				<ul>
 					<li><a class="active">Spot Yourself</a></li>
-					<li><a href="#" onclick="return show('vsa','sya')";>View Spots</a></li>
+					<li><a href="#" onclick="return show('vsa','sya')">View Spots</a></li>
 				</ul>
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('syp','sya');">POTAGW</a></li>
+					<li><a href="#" onclick="return show('syp','sya')">POTAGW</a></li>
 					<li><a class="active">APSPOT</a></li>
 				</ul>
 			</div>
 			
 			<!-- Winlink Form - NOTE: the 'required' attribute of the input field is HTML5, not XHTML 1.0 Transitional so YMMV -->
 			<div class="activation">
-				<form id='RMS_Express_form' method='post' action='http://localhost:{FormPort}' enctype='multipart/form-data'>
+				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 					<p>
-						<input type='hidden' name='To' value="apspot@apspot.radio" />
-						<input type='hidden' name='cmd' value="!" />
+						<input type="hidden" name="To" value="apspot@apspot.radio" />
+						<input type="hidden" name="cmd" value="!" />
 					</p>
 					<p>
 						<label>Activity:</label> <span class="examples">[e.g. POTA SiOTA, SOTA, or WWFF]</span>
-						<input type='text' name='Alpha' required/>
+						<input type="text" name="Alpha" required />
 					</p>
 					<p>
 						<label>Park Ref. ID:</label> <span class="examples">[e.g. K-0001 for POTA, WWFF-1929 for WWFF, etc.]</span>
-						<input type='text' name='Bravo' required/>
+						<input type="text" name="Bravo" required />
 					</p>
 					<p>
 						<label>Frequency (MHz):</label> <span class="examples">[e.g. 14.310, 7.144, etc.]</span>
-						<input type='text' name='Charlie' required/>
+						<input type="text" name="Charlie" required />
 					</p>
 					<p>
 						<label>Mode:</label> <span class="examples">[e.g. AM, CW, FM, FT8, PSK, RTTY, SSB, etc.]</span>
-						<input type='text' name='Delta' required/>
+						<input type="text" name="Delta" required />
 					</p>
 					<p>
 						<label>Comment:</label> <span class="examples">[e.g. CQ CQ]</span>
-						<input type='text' name='Echo'/> 
+						<input type="text" name="Echo" /> 
 					</p>
 					<p>
-						<input type='submit' name='Submit' value='Submit' method='Post' enctype='multipart/form-data' />
+						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
 					</p>
 				</form>
 			</div>
@@ -177,41 +177,41 @@
 		<div id="vsp">
 			<div class="primaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('syp','vsp')";>Spot Yourself</a></li>
+					<li><a href="#" onclick="return show('syp','vsp')">Spot Yourself</a></li>
 					<li><a class="active">View Spots</a></li>
 				</ul>
 			</div>
 			<div class="secondaryNav">
 				<ul>
 					<li><a class="active">POTAGW</a></li>
-					<li><a href="#" onclick="return show('vsa','vsp')";>APSPOT</a></li>
+					<li><a href="#" onclick="return show('vsa','vsp')">APSPOT</a></li>
 				</ul>
 			</div>
 			
 			<!-- Winlink Form -->
 			<div class="hunting">
 				<p></p>
-				<form id='RMS_Express_form' method='post' action='http://localhost:{FormPort}' enctype='multipart/form-data'>
+				<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
 						<fieldset>
 							<legend>View POTA Activty:</legend>
 							<div class="huntingOpts">
-								<input type="hidden" name='To' value="potagw@outlook.com"/>
-								<input type='radio' name='cmd' value="VIEWSPOTS" checked="checked"/>
+								<input type="hidden" name="To" value="potagw@outlook.com" />
+								<input type="radio" name="cmd" value="VIEWSPOTS" checked="checked" />
 								<label>Pipe Delimited "|"</label>
-								<input type='radio' name='cmd' value="VIEWSPOTS -P"/>
+								<input type="radio" name="cmd" value="VIEWSPOTS -P" />
 								<label>Tab Delimited</label>
-								<input type='radio' name='cmd' value="VIEWSPOTS -P -C"/>
+								<input type="radio" name="cmd" value="VIEWSPOTS -P -C" />
 								<label>Tab Delimited with Comments</label>
-								<input type="hidden" name='Alpha' value=""/>
-								<input type="hidden" name='Bravo' value=""/>
-								<input type="hidden" name='Charlie' value=""/>
-								<input type="hidden" name='Delta' value=""/>
-								<input type="hidden" name='Echo' value=""/>
+								<input type="hidden" name="Alpha" value="" />
+								<input type="hidden" name="Bravo" value="" />
+								<input type="hidden" name="Charlie" value="" />
+								<input type="hidden" name="Delta" value="" />
+								<input type="hidden" name="Echo" value="" />
 							</div>
 						</fieldset>
 
 					<p>
-						<input type='submit' name='Submit' value='Submit' method='Post' enctype='multipart/form-data' />
+						<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data" />
 					</p>
 				</form>
 			</div>
@@ -225,13 +225,13 @@
 		<div id="vsa">
 			<div class="primaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('sya','vsa')";>Spot Yourself</a></li>
+					<li><a href="#" onclick="return show('sya','vsa')">Spot Yourself</a></li>
 					<li><a class="active">View Spots</a></li>
 				</ul>
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('vsp','vsa')";>POTAGW</a></li>
+					<li><a href="#" onclick="return show('vsp','vsa')">POTAGW</a></li>
 					<li><a class="active">APSPOT</a></li>
 				</ul>
 			</div>
@@ -239,16 +239,16 @@
 			<!-- Winlink Form -->
 			<div class="hunting">
 				<p></p>
-					<form id='RMS_Express_form' method='post' action='http://localhost:{FormPort}' enctype='multipart/form-data'>
-							<input type="hidden" name='To' value="apspot@apspot.radio"/>
+					<form id="RMS_Express_form" method="post" action="http://localhost:{FormPort}" enctype="multipart/form-data">
+							<input type="hidden" name="To" value="apspot@apspot.radio"/>
 							<fieldset>
 								<legend>View SPOT Activity:</legend>
 								<div class="huntingOpts">
-									<input type='radio' name='cmd' value="SPOTS POTA" checked="checked"/>
+									<input type="radio" name="cmd" value="SPOTS POTA" checked="checked"/>
 									<label>POTA</label>
-									<input type='radio' name='cmd' value="SPOTS SOTA"/>
+									<input type="radio" name="cmd" value="SPOTS SOTA"/>
 									<label>SOTA</label>
-									<input type='radio' name='cmd' value="SPOTS WWFF"/>
+									<input type="radio" name="cmd" value="SPOTS WWFF"/>
 									<label>WWFF</label>
 								</div>
 							</fieldset>
@@ -256,23 +256,23 @@
 							<fieldset>
 								<legend>Modes<sup>*</sup>:</legend>
 								<div class="huntingOpts">
-									<input type='radio' name='Alpha' value="" checked="checked"/>
+									<input type="radio" name="Alpha" value="" checked="checked"/>
 									<label>All</label>
-									<input type='radio' name='Alpha' value="AM"/>
+									<input type="radio" name="Alpha" value="AM"/>
 									<label>AM</label>
-									<input type='radio' name='Alpha' value="CW"/>
+									<input type="radio" name="Alpha" value="CW"/>
 									<label>CW</label>
-									<input type='radio' name='Alpha' value="DATA"/>
+									<input type="radio" name="Alpha" value="DATA"/>
 									<label>DATA</label>
-									<input type='radio' name='Alpha' value="FM"/>
+									<input type="radio" name="Alpha" value="FM"/>
 									<label>FM</label>
-									<input type='radio' name='Alpha' value="FT8"/>
+									<input type="radio" name="Alpha" value="FT8"/>
 									<label>FT8</label>
-									<input type='radio' name='Alpha' value="PSK"/>
+									<input type="radio" name="Alpha" value="PSK"/>
 									<label>PSK</label>
-									<input type='radio' name='Alpha' value="RTTY"/>
+									<input type="radio" name="Alpha" value="RTTY"/>
 									<label>RTTY</label>
-									<input type='radio' name='Alpha' value="SSB"/>
+									<input type="radio" name="Alpha" value="SSB"/>
 									<label>SSB</label>
 								</div>
 							</fieldset>
@@ -287,7 +287,7 @@
 							<input type="hidden" name="Echo" value=""/>
 						<p class="filters"><sup>*</sup>POTA supports CW, DATA, FT8, SSB<br />SiOTA, SOTA, WWFF supports AM, CW, DATA, FM, PSK, RTTY, SSD.<br />https://apspot.radio/filtering-support-new-backend-big-things-coming/</p>
 						<p>
-							<input type='submit' name='Submit' value='Submit' method='Post' enctype='multipart/form-data'/>
+							<input type="submit" name="Submit" value="Submit" method="Post" enctype="multipart/form-data"/>
 						</p>
 					</form>
 			</div>
