@@ -1,6 +1,6 @@
 # Winlink_Form-xOTA
 ![POTA Logo](img/POTA.png) ![SiOTA Logo](img/SiOTA.png) ![SOTA Logo](img/SOTA.png) ![WWFF Logo](img/WWFF.png)
-### For Off-Grid Spotting and Hunting Parks, Summits, and more, OTA via Winlink
+### Unofficial Off-Grid Spotting and Hunting Parks, Summits, and more, OTA via Winlink
 
 This Winlink form support activating and hunting Parks on the Air (**[POTA](https://pota.app/#/)**), Silos on the Air (**[SiOTA](https://www.silosontheair.com/)**), Summits on the Air (**[SOTA](https://sotawatch.sota.org.uk/en/)**), and World Wide Flora & Fauna (**[WWFF](https://wwff.co/dx-cluster/)**) off-grid.
 
