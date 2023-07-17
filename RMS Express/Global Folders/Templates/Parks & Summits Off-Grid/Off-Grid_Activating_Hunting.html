@@ -44,7 +44,7 @@
 			input[type=radio], .hunting input.radio {clear: none; float: left; margin: 3px 0 0 15px;}
 			input[type=submit], .hunting input.submit {clear: both; font-size: 1.75em; width: 100%;}
 			.optionalFilters {text-align: center; margin-bottom: 0;}
-			.filters {margin: 0 auto; text-align: left; padding: 0;}
+			.filters {margin: 10px 10px 0; text-align: left; padding: 0;}
 
 			/* Shared elements on both Spot Yourself and View Spots pages */
 			.required-field::after {content: "*"; color: red;}
@@ -274,7 +274,7 @@
 							</fieldset>
 							<p class="optionalFilters">- Optional -</p>
 							<fieldset>
-								<legend>Modes<sup>*</sup>:</legend>
+								<legend>Modes ¹<sup>,</sup> ²:</legend>
 								<div class="huntingOpts">
 									<input type="radio" name="Alpha" value="" checked="checked"/>
 									<label>All</label>
@@ -305,7 +305,7 @@
 							<input type="hidden" name="Charlie" value=""/>
 							<input type="hidden" name="Delta" value=""/>
 							<input type="hidden" name="Echo" value=""/>
-						<p class="filters"><sup>*</sup>POTA supports CW, DATA, FT8, SSB<br />SiOTA, SOTA, WWFF supports AM, CW, DATA, FM, PSK, RTTY, SSD.<br />https://apspot.radio/filtering-support-new-backend-big-things-coming/</p>
+						<p class="filters">¹ POTA supports CW, DATA, FT8, SSB.<br />² SiOTA, SOTA, WWFF supports AM, CW, DATA, FM, PSK, RTTY, SSD.<br />&nbsp;&nbsp;&nbsp;https://apspot.radio/filtering-support-new-backend-big-things-coming/</p>
 						<p>
 							<input type="submit" name="Submit" value="Submit" />
 						</p>
