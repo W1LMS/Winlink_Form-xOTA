@@ -1,4 +1,4 @@
-#Logo Usage
+*Logo Usage
 
 The use of logos has been granted for non-commercial use.
 Logo use policy:
