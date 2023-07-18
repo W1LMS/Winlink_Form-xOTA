@@ -25,7 +25,7 @@
 			/* Selection between POTAGW@outlook.com and APSPOT@apspot.radio */
 			.secondaryNav {background-color: #98c1d9; text-align: center;}
 			.secondaryNav ul {display: inline-block; list-style-type: none; margin: 0 auto; overflow: hidden; padding: 0;}
-			.secondaryNav ul li {float: left; margin: 0;}
+			.secondaryNav li {float: left; margin: 0;}
 			.secondaryNav a {color: #293241; float: left; padding: 7px 16px; text-decoration: none; width: 100px;}
 			.secondaryNav a:hover {background-color: #ee6c4d; color: #e0fbfc;}
 			.secondaryNav a.active {background-color: #293241; color: #e0fbfc; font-weight: bold;}
@@ -80,8 +80,8 @@
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a class="active">POTAGW</a></li>
-					<li><a href="#" onclick="return show('sya','syp')">APSPOT</a></li>
+					<li><a class="active" title="potagw@outlook.com">POTAGW</a></li>
+					<li><a href="#" title="apspot@apspot.radio" onclick="return show('sya','syp')">APSPOT</a></li>
 				</ul>
 			</div>
 			
@@ -122,10 +122,10 @@
 				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
 			</div>
 			<div class="version-revision">
-				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+				<p class="version">ver. 2.0.3rc<br />rev. 7/15/2023</p>
 			</div>
 			<div class="footer">
-				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh/VK2MES for APSPOT.radio.</p>
+				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI (POTAGW) and Josh/VK2MES (APSPOT) for their gateways.</p>
 			</div>
 		</div>
 		
@@ -139,8 +139,8 @@
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('syp','sya')">POTAGW</a></li>
-					<li><a class="active">APSPOT</a></li>
+					<li><a href="#" title="potagw@outlook.com" onclick="return show('syp','sya')">POTAGW</a></li>
+					<li><a class="active" title="apspot@apspot.radio">APSPOT</a></li>
 				</ul>
 			</div>
 			
@@ -181,10 +181,10 @@
 				<img src="data:image/gif;base64,R0lGODlhWAAfAPcAAAAAAAcICQsLCw8RExMUFRMWGBwcHBoeIRwgIyMjIyInKyQqLigoKCctMSguMysyNi41OjMzMzE4PTs7OzU9QjhARjxGTD9JUEtLTEFLUk9PUElUW1RVVVtbW0Rdb01YYVBcZVleYlVha1hlb1tpc2VlZWtrbGBveWJxfHt7ewBanAhfnx9bhwlgnw1ioRFlohVopBprph5tqDJtmSFvqSVyqil1rDF5rzl0oTV8sDh+smh4hG5/izyBs0SGtkeIt0qKuVWRvVqUv2uDl3CBjXSGknyPnXaRp3+ToF2WwGOawmmexG2hxnWlyXyqzIGDhYmOlpeXl5iYmIGUooaaqIidrJCXoI2isZmhqqOlpqurrbS0tL+/v4Kuzoawz4Ww0Imz0Zuywp+3yJC31JW61Zi815u+2KG6y6W+0J/B2qPD26nD1arG2qzI3LDL3rLN4LbQ48LCwszMzNTU1NjY2MDW58ba6M3f7NPj7t3p8ufn5+zs7OLs8+nx9u70+PPz8/L3+vX4+/7+/szMzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAIMALAAAAABYAB8AAAj+AOUIHEiwoMGDCBMqXMiQYJZBECHKEUSxosWLGDNm5POmo8ePIEOKHCmyCpQQESVqXMlSI0eSMGPKzHIy5aCJLXO2fCmzp8+OWGqmxKmzKEaeP5OSDIpyqNGnFpEqnfqRqU2iUI1KpUrVqlNBamQ0qQimBhiLflaskMGWbRCKf56YmLglEMWtXJV6jYgzjwoYFeuo0GFRjYrDiFU4oYgBAIAAdCLQuasUTt6qQvlWtKHiTsUXKvpUTKIiSB8+Zv4CEpQFAIMUEwgI2EP5Mte9Kik2UdGl4g0VairCUJGHYg3gFDVMsCuoRIqKeHtattw1c25BgnPcPfxWkB0VNij+glGhnSIBooH+QP9o5IMFEWHerCGSwcKIM2/cTNlQ4cOV2ycdpllFLoQmSGoqvECREyqM1QdodsCVwEo8ZfAYBAd88AYIADwgAQFU6AcAAhQgIAKALCB2nSBBINfib3AI8lsdgihxGBN+CBIIBhR2NAUABuD3hhhvEICAG2+0wcYbFhIpH1dVzJCYCjcVVpogLsjQRoN8JEhREMORt1oUPb4xAgAjgGQBAANYQEVHRFxIxJJU4TDlYVj1oYILb6igBCAr2JCaEBbZAVobgsRR5gcAnAASGzs44BgPPlIQAAAWTOWGD3dSiZUgOqjw2xuCcPpbcBYt4edOHRUBgAL+bbwBBxpv0PpGFQBc8MYZbsCxxgADKLVppysK4sVhLtg13mE5WtRnDax2JGkBH1AAwhsCWCtpEW9c4MAGFwCwwUht6EBGSJzeOWBFdxwGBEV+qdADRlvKQNtFf6gnCE9tnEDBART8twMFClSww5JTXLAABCQIGdJvLoDxUbpTfmWRDCqUsZkKZ5GRREWq/sDFvRWZwEVtIMFB3Ugqk0TxCl10RDFiHlyFkY18VLQbHjU22IcaoKkRSAd6lBzAHCjb5pGqUzbxw5QrDNHUuhW9cYNFddBAESDDrXBYeXIYwAEHCQBAZtJKJxlqp4itYIR1VV4USG8WLUYRHkvAAIO/EswJQgcHBkSghUV5pA3SsGyvAAZucWelleEhtXin4m8w/qnj0UL+kY2JrfAFUHBfjnmZmn/E9J6fgz51saOTXrpHTqiVuuo2t55TdJp7MTvtFtvu+uFIwhQrSW4EH5Llgmyh/PLMN+/8885rYcX0VkBBvRVSXG9FFNZTLwUU2VPf/fTfX8999kWYsPpNGHCAAQYaxA+//PFrML/97uMP//37v5/B+wC0QAAFCMD//c9/CMQAAQuYQADGLwI2CQgAOw==" alt="Valid CSS!" width="88" height="31" />
 			</div>
 			<div class="version-revision">
-				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+				<p class="version">ver. 2.0.3rc<br />rev. 7/15/2023</p>
 			</div>
 			<div class="footer">
-				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh/VK2MES for APSPOT.radio.</p>
+				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI (POTAGW) and Josh/VK2MES (APSPOT) for their gateways.</p>
 			</div>
 		</div>
 
@@ -198,8 +198,8 @@
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a class="active">POTAGW</a></li>
-					<li><a href="#" onclick="return show('vsa','vsp')">APSPOT</a></li>
+					<li><a class="active" title="potagw@outlook.com">POTAGW</a></li>
+					<li><a href="#" title="apspot@apspot.radio" onclick="return show('vsa','vsp')">APSPOT</a></li>
 				</ul>
 			</div>
 			
@@ -234,10 +234,10 @@
 				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
 			</div>
 			<div class="version-revision">
-				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+				<p class="version">ver. 2.0.3rc<br />rev. 7/15/2023</p>
 			</div>
 			<div class="footer">
-				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh/VK2MES for APSPOT.radio.</p>
+				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI (POTAGW) and Josh/VK2MES (APSPOT) for their gateways.</p>
 			</div>
 		</div>
 
@@ -251,8 +251,8 @@
 			</div>
 			<div class="secondaryNav">
 				<ul>
-					<li><a href="#" onclick="return show('vsp','vsa')">POTAGW</a></li>
-					<li><a class="active">APSPOT</a></li>
+					<li><a href="#" title="potagw@outlook.com" onclick="return show('vsp','vsa')">POTAGW</a></li>
+					<li><a class="active" title="apspot@apspot.radio">APSPOT</a></li>
 				</ul>
 			</div>
 			
@@ -316,10 +316,10 @@
 				<img src="data:image/gif;base64,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" alt="Valid CSS!" width="88" height="31" />
 			</div>
 			<div class="version-revision">
-				<p class="version">ver. 2.0.2<br />rev. 7/15/2023</p>
+				<p class="version">ver. 2.0.3rc<br />rev. 7/15/2023</p>
 			</div>
 			<div class="footer">
-				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI for providing potagw@outlook.com and Josh/VK2MES for APSPOT.radio.</p>
+				<p class="author">Contact Tony W1LMS to provide feedback, questions, or report any issues with this form.<br />Many thanks to Rich/W4PI (POTAGW) and Josh/VK2MES (APSPOT) for their gateways.</p>
 			</div>
 		</div>	
 	</body>
