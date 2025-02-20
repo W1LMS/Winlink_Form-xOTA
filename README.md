@@ -1,4 +1,4 @@
-# Winlink_Form-xOTA
+# POTA/SOTA Off-Grid Spotting & Hunting via Winlink
 [![POTA Logo](img/POTA.png 'POTA Website')](https://parksontheair.com) [![SiOTA Logo](img/SiOTA.png 'SiOTA Website')](https://www.silosontheair.com/about.html) [![SOTA Logo](img/SOTA.png 'SOTA Website')](https://www.sota.org.uk) [![WWFF Logo](img/WWFF.png 'WWFF Website')](https://wwff.co)
 ### Unofficial Off-Grid Spotting & Hunting Parks, Summits, and more, OTA via Winlink
 
