@@ -40,7 +40,7 @@
 			.hunting fieldset {clear: both; overflow: hidden;}
 			.hunting legend, .optionalFilters {font-size: 1.5em; font-weight: bold;}
 			.huntingOpts {clear: none; float: left;}
-			.hunting label {clear: none; display: block; float: left; font-size: 1em; font-weight: bold; padding: 0 0 0 8px;}
+			.hunting label {clear: none; display: block; float: left; font-size: 1em; font-weight: bold; padding: 0 10px 0 8px;}
 			.hunting input[type=text], .hunting input.text {clear: both; font-size: 1.75em; margin: 0 110px; text-align: center;}
 			input[type=radio], .hunting input.radio {clear: none; float: left; margin: 3px 0 0 15px;}
 			input[type=submit], .hunting input.submit {clear: both; font-size: 1.75em; width: 100%;}
@@ -240,11 +240,11 @@
 							<div class="huntingOpts">
 								<input type="hidden" name="To" value="potagw@outlook.com" />
 								<input type="radio" name="cmd" value="VIEWSPOTS -P -C" checked="checked" />
-								<label>Email Reply</label>
+								<label>Inline Email Reply</label>
 								<input type="radio" name="cmd" value="VIEWSPOTS -A -C" />
 								<label>CSV File Attached</label><br />
 								<input type="radio" name="cmd" value="SEARCH" />
-								<label>Search/Lookup [Enter Park ID or Callsign below]:</label><br />
+								<label>Search/Lookup Park ID or Callsign below:</label> <span class="examples">[e.g. Joshua Tree]</span><br />
 								<input type="text" name="Alpha" value="" />
 								<input type="hidden" name="Bravo" value="" />
 								<input type="hidden" name="Charlie" value="" />
