@@ -1,0 +1,4 @@
+Form:POTA-SOTA-Off-Grid-Spotting-Hunting-via-Winlink.html
+To: <var To>
+Subject: <var cmd> <var Alpha> <var Bravo> <var Charlie> <var Delta> <var Echo>
+Msg:
